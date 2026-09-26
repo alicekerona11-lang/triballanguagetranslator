@@ -1,0 +1,151 @@
+/* ==========================================================================
+   GOVERNMENT DIGITAL SERVICE DESIGN SYSTEM
+   Tribal Language Learning & Classroom Communication Platform
+   Color Palette: White + Government Green
+   Standards: WCAG 2.1 AA/AAA Compliant, High Contrast, Accessible Public Service
+   ========================================================================== */
+
+:root {
+  /* Official Government Color Palette */
+  --gov-green-primary: #138808;      /* Primary Green */
+  --gov-green-dark: #075E2A;         /* Dark Green for text, headers, high contrast */
+  --gov-green-light: #EAF6EA;        /* Light Green for panels, badges, table highlights */
+  --gov-white: #FFFFFF;              /* Pure White */
+  --gov-offwhite: #F7F9F7;           /* Off-white background */
+  --gov-text-primary: #1F2933;       /* Main text, 10:1+ contrast on white */
+  --gov-text-secondary: #5B6573;     /* Subtext, metadata */
+  --gov-border: #D9E2DC;             /* Border line color */
+  --gov-warning: #D99A00;            /* Accessible warning amber */
+  --gov-error: #C62828;              /* Accessible error red */
+  --gov-info: #0D47A1;               /* Deep accessible blue for informational tags */
+
+  /* Neutral Dark for high contrast elements */
+  --gov-dark-bg: #111827;
+
+  /* Typography */
+  --font-family-base: "Noto Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-ol-chiki: "Noto Sans Ol Chiki", "Noto Sans", sans-serif;
+  --font-family-devanagari: "Noto Sans Devanagari", "Noto Sans", sans-serif;
+
+  /* Base Font Scaling (Adjustable via Accessibility Bar) */
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
+
+  /* Sizing & Borders */
+  --radius-sm: 2px;
+  --radius-md: 4px;                  /* Rectangular with mildly rounded corners */
+  --border-width: 1px;
+  --border-thick: 2px;
+  --box-shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --box-shadow-card: 0 2px 4px rgba(31, 41, 51, 0.06);
+
+  /* Layout */
+  --max-container-width: 1200px;
+}
+
+/* Dynamic Font Scaling for Accessibility */
+html.font-scale-sm {
+  font-size: 14px;
+}
+html.font-scale-md {
+  font-size: 16px;
+}
+html.font-scale-lg {
+  font-size: 18px;
+}
+
+/* High Contrast Mode for Low Vision Users */
+html.high-contrast {
+  --gov-border: #000000;
+  --gov-text-primary: #000000;
+  --gov-text-secondary: #222222;
+  --gov-green-primary: #05481d;
+  --gov-green-dark: #003314;
+  --gov-green-light: #d8edd8;
+  --box-shadow-subtle: none;
+  --box-shadow-card: none;
+}
+html.high-contrast a {
+  text-decoration: underline !important;
+}
+html.high-contrast button, 
+html.high-contrast input, 
+html.high-contrast select {
+  border-width: 2px !important;
+  border-color: #000000 !important;
+}
+
+/* Global Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--gov-text-primary);
+  background-color: var(--gov-offwhite);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Focus Visible for Keyboard Accessibility (WCAG 2.4.7) */
+:focus-visible {
+  outline: 3px solid var(--gov-green-dark) !important;
+  outline-offset: 2px !important;
+}
+
+/* Skip link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--gov-green-dark);
+  color: var(--gov-white);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 10000;
+  border-radius: var(--radius-md);
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* Ol Chiki & Devanagari Script Support */
+.ol-chiki-text {
+  font-family: var(--font-family-ol-chiki);
+  letter-spacing: 0.5px;
+}
+.devanagari-text {
+  font-family: var(--font-family-devanagari);
+}
+
+/* Layout Utilities */
+.gov-container {
+  width: 100%;
+  max-width: var(--max-container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

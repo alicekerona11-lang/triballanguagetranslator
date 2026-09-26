@@ -1,0 +1,828 @@
+/* ==========================================================================
+   VIEW-SPECIFIC STYLES
+   Landing, Teacher, Student, Voice Translator, Authority Dashboards
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   General View Layout & Breadcrumbs
+   -------------------------------------------------------------------------- */
+.gov-view {
+  display: none;
+  padding: 2rem 0 3.5rem;
+}
+
+.gov-view.active-view {
+  display: block;
+}
+
+.gov-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--gov-text-secondary);
+  margin-bottom: 1.25rem;
+  list-style: none;
+}
+
+.gov-breadcrumb a {
+  color: var(--gov-green-dark);
+  text-decoration: none;
+}
+
+.gov-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.gov-page-header {
+  margin-bottom: 1.75rem;
+  border-bottom: 2px solid var(--gov-border);
+  padding-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gov-page-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--gov-green-dark);
+  line-height: 1.2;
+}
+
+.gov-page-subtitle {
+  font-size: 0.9375rem;
+  color: var(--gov-text-secondary);
+  margin-top: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   DEDICATED LOGIN VIEWS
+   -------------------------------------------------------------------------- */
+.gov-login-container {
+  max-width: 900px;
+  margin: 1.5rem auto;
+}
+
+.login-form-card {
+  max-width: 480px;
+  margin: 2rem auto;
+  background: var(--gov-white);
+  border: 1.5px solid var(--gov-border);
+  border-top: 4px solid var(--gov-green-primary);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--box-shadow-card);
+}
+
+.login-role-tag {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--gov-green-dark);
+  background: var(--gov-green-light);
+  border: 1px solid #B8E4B8;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+}
+
+.login-alert-error {
+  background: #FDEDEC;
+  border: 1px solid #F5B7B1;
+  color: var(--gov-error);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  display: none;
+}
+
+.demo-credentials-callout {
+  background: #EBF5FB;
+  border: 1px dashed #2980B9;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.8125rem;
+  color: #1A5276;
+  margin-top: 1.5rem;
+}
+
+.demo-credentials-callout code {
+  background: #FFF;
+  padding: 0.1rem 0.35rem;
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+
+/* --------------------------------------------------------------------------
+   1. LANDING PAGE
+   -------------------------------------------------------------------------- */
+.gov-hero-section {
+  background-color: var(--gov-white);
+  border-bottom: 1px solid var(--gov-border);
+  padding: 3.5rem 0 3rem;
+}
+
+.gov-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .gov-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.gov-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--gov-green-light);
+  color: var(--gov-green-dark);
+  border: 1px solid #B8E4B8;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gov-hero-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--gov-green-dark);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+.gov-hero-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--gov-text-primary);
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--gov-green-primary);
+  padding-left: 1rem;
+}
+
+.gov-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Minimal Flat Government Illustration */
+.gov-illustration-card {
+  background-color: var(--gov-offwhite);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow-subtle);
+}
+
+.gov-illustration-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gov-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed var(--gov-border);
+  padding-bottom: 0.5rem;
+}
+
+.flow-diagram {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Landing Secondary Sections */
+.landing-section {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--gov-border);
+  background-color: var(--gov-white);
+}
+
+.landing-section-alt {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--gov-border);
+  background-color: var(--gov-offwhite);
+}
+
+.section-header-centered {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--gov-green-dark);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--gov-text-secondary);
+}
+
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.lang-card {
+  background: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-top: 3px solid var(--gov-green-primary);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.lang-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.lang-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gov-green-dark);
+}
+
+.lang-script {
+  font-size: 0.8125rem;
+  color: var(--gov-text-secondary);
+  font-weight: 600;
+}
+
+.lang-sample {
+  background: var(--gov-offwhite);
+  border: 1px solid var(--gov-border);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 1.15rem;
+  margin: 0.75rem 0;
+  color: var(--gov-text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   2. TEACHER DASHBOARD
+   -------------------------------------------------------------------------- */
+.teacher-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .teacher-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.teacher-profile-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-left: 4px solid var(--gov-green-primary);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.teacher-meta-group {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.teacher-meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.teacher-meta-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gov-text-secondary);
+}
+
+.teacher-meta-val {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gov-text-primary);
+}
+
+/* Classroom Quick Action Box */
+.classroom-callout {
+  background-color: var(--gov-green-light);
+  border: 1.5px solid #A2D6A2;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.classroom-callout-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.classroom-callout-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--gov-green-dark);
+  text-transform: uppercase;
+}
+
+.classroom-callout-lang {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--gov-text-primary);
+  margin-top: 0.25rem;
+}
+
+/* Resource Counters */
+.resources-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .resources-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.resource-stat-card {
+  background: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resource-stat-val {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gov-green-dark);
+}
+
+.resource-stat-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gov-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   3. STUDENT DASHBOARD
+   -------------------------------------------------------------------------- */
+.student-course-banner {
+  background-color: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-left: 5px solid var(--gov-green-primary);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.student-course-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--gov-green-dark);
+}
+
+.student-progress-wrapper {
+  min-width: 240px;
+  flex: 1;
+  max-width: 380px;
+}
+
+.student-progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+/* Student Learning Modules Grid */
+.student-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.student-module-card {
+  background-color: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  box-shadow: var(--box-shadow-subtle);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.student-module-card:hover {
+  border-color: var(--gov-green-primary);
+}
+
+.module-card-icon {
+  width: 44px;
+  height: 44px;
+  background-color: var(--gov-green-light);
+  border: 1px solid #BEE6BE;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.module-card-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--gov-green-dark);
+}
+
+.module-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--gov-text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.module-card-desc {
+  font-size: 0.875rem;
+  color: var(--gov-text-secondary);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+/* Interactive Flashcard Preview Modal/Box */
+.flashcard-viewer {
+  background: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  text-align: center;
+  max-width: 500px;
+  margin: 1.5rem auto;
+  box-shadow: var(--box-shadow-card);
+}
+
+.flashcard-script-lg {
+  font-size: 3.5rem;
+  color: var(--gov-green-dark);
+  margin: 1rem 0 0.5rem;
+  font-weight: 700;
+}
+
+.flashcard-roman {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gov-text-secondary);
+}
+
+.flashcard-meaning {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gov-text-primary);
+  margin: 0.75rem 0 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. VOICE TRANSLATOR (CLASSROOM SERVICE)
+   -------------------------------------------------------------------------- */
+.translator-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.translator-lang-bar {
+  background: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.lang-picker-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.btn-lang-swap {
+  background: var(--gov-offwhite);
+  border: 1px solid var(--gov-border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--gov-green-dark);
+  transition: all 0.15s ease;
+}
+
+.btn-lang-swap:hover {
+  background: var(--gov-green-light);
+  border-color: var(--gov-green-primary);
+}
+
+/* Translator Status Steps Strip */
+.trans-status-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 650px) {
+  .trans-status-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.trans-step-item {
+  background: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gov-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.trans-step-item.active {
+  background: var(--gov-green-light);
+  border-color: var(--gov-green-primary);
+  color: var(--gov-green-dark);
+  font-weight: 800;
+  box-shadow: 0 0 0 1px var(--gov-green-primary);
+}
+
+/* Translator Main Mic Trigger Button */
+.trans-mic-box {
+  text-align: center;
+  margin: 1.75rem 0 2rem;
+}
+
+.btn-mic-main {
+  background-color: var(--gov-green-primary);
+  color: var(--gov-white);
+  border: 2px solid var(--gov-green-dark);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  box-shadow: 0 4px 6px rgba(19, 136, 8, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-mic-main:hover {
+  background-color: var(--gov-green-dark);
+  transform: translateY(-1px);
+}
+
+.btn-mic-main.recording {
+  background-color: var(--gov-error);
+  border-color: #8C1D1D;
+  animation: pulse-recording 1.2s infinite;
+}
+
+@keyframes pulse-recording {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Source & Translated Panels */
+.trans-results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .trans-results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trans-box {
+  background: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+}
+
+.trans-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gov-border);
+}
+
+.trans-box-title {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gov-green-dark);
+}
+
+.trans-content-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gov-text-primary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.trans-sub-text {
+  font-size: 0.9375rem;
+  color: var(--gov-text-secondary);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* Quick Classroom Phrases Bank */
+.quick-phrases-card {
+  background: var(--gov-offwhite);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.phrases-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.btn-phrase-chip {
+  background: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gov-text-primary);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.btn-phrase-chip:hover {
+  background: var(--gov-green-light);
+  border-color: var(--gov-green-primary);
+  color: var(--gov-green-dark);
+}
+
+/* --------------------------------------------------------------------------
+   5. AUTHORITY DASHBOARD
+   -------------------------------------------------------------------------- */
+.authority-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+  .authority-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .authority-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card-gov {
+  background: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-top: 4px solid var(--gov-green-primary);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--box-shadow-subtle);
+}
+
+.stat-card-val {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gov-green-dark);
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-card-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--gov-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.authority-section-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--gov-green-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 2.25rem 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.authority-table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search-input-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 320px;
+}

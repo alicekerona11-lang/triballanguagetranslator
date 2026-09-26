@@ -1,0 +1,997 @@
+/* ==========================================================================
+   GOVERNMENT COMPONENT STYLES
+   Rectangular, Mildly Rounded (4px), High Contrast, Clean Public Service
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Accessibility & Utility Top Bar
+   -------------------------------------------------------------------------- */
+.gov-utility-bar {
+  background-color: #F0F4F1;
+  border-bottom: 1px solid var(--gov-border);
+  font-size: 0.8125rem;
+  color: var(--gov-text-secondary);
+  padding: 0.35rem 0;
+}
+
+.gov-utility-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.gov-utility-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gov-service-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: var(--gov-green-dark);
+}
+
+.gov-utility-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Accessibility Controls: Font Resizer & Contrast */
+.gov-a11y-controls {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--gov-border);
+  background: var(--gov-white);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.gov-a11y-btn {
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--gov-border);
+  padding: 0.2rem 0.55rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--gov-text-primary);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.gov-a11y-btn:last-child {
+  border-right: none;
+}
+
+.gov-a11y-btn:hover, .gov-a11y-btn.active {
+  background-color: var(--gov-green-light);
+  color: var(--gov-green-dark);
+}
+
+.gov-select-sm {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8125rem;
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-sm);
+  background: var(--gov-white);
+  color: var(--gov-text-primary);
+  cursor: pointer;
+}
+
+/* Network Status Indicator */
+.gov-network-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gov-border);
+  background: var(--gov-white);
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.online {
+  background-color: var(--gov-green-primary);
+  box-shadow: 0 0 0 2px rgba(19, 136, 8, 0.2);
+}
+
+.status-dot.offline {
+  background-color: var(--gov-warning);
+  box-shadow: 0 0 0 2px rgba(217, 154, 0, 0.2);
+}
+
+.status-dot.syncing {
+  background-color: var(--gov-info);
+  animation: pulse-sync 1.2s infinite ease-in-out;
+}
+
+.status-dot.synced {
+  background-color: var(--gov-green-dark);
+}
+
+@keyframes pulse-sync {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+/* Simulator selector for testing */
+.sim-selector {
+  border: 1px dashed var(--gov-green-dark);
+  background: var(--gov-green-light);
+  color: var(--gov-green-dark);
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   2. Main Header
+   -------------------------------------------------------------------------- */
+.gov-header {
+  background-color: var(--gov-white);
+  border-top: 4px solid var(--gov-green-primary);
+  border-bottom: 1px solid var(--gov-border);
+  padding: 1rem 0;
+}
+
+.gov-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.gov-branding {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.gov-logo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  background-color: var(--gov-offwhite);
+  border: 1.5px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.gov-logo-svg {
+  width: 42px;
+  height: 42px;
+}
+
+.gov-logo-sub {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--gov-green-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.gov-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.gov-title-main {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--gov-green-dark);
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+.gov-title-tagline {
+  font-size: 0.875rem;
+  color: var(--gov-text-secondary);
+  font-weight: 500;
+  margin-top: 0.2rem;
+  border-left: 3px solid var(--gov-green-primary);
+  padding-left: 0.5rem;
+}
+
+/* Header Right Nav Links & Role Switcher */
+.gov-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+
+.gov-top-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  list-style: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.gov-top-nav-links a {
+  color: var(--gov-text-primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.gov-top-nav-links a:hover {
+  color: var(--gov-green-dark);
+  text-decoration: underline;
+}
+
+/* Role Switcher Toolbar (Demonstrates multi-role views seamlessly) */
+.gov-role-toolbar {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--gov-offwhite);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  padding: 2px;
+  gap: 2px;
+}
+
+.role-toolbar-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gov-text-secondary);
+  padding: 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gov-role-btn {
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gov-text-primary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.15s ease;
+}
+
+.gov-role-btn:hover {
+  background: #E2ECE5;
+}
+
+.gov-role-btn.active {
+  background: var(--gov-green-dark);
+  color: var(--gov-white);
+}
+
+/* User Profile & Logout Header */
+.gov-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--gov-offwhite);
+  border: 1px solid var(--gov-border);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-md);
+}
+
+.gov-user-info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.gov-user-name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--gov-text-primary);
+  line-height: 1.2;
+}
+
+.gov-user-role-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gov-green-dark);
+  text-transform: uppercase;
+}
+
+.btn-logout {
+  background: #FDEDEC;
+  border: 1px solid #F5B7B1;
+  color: var(--gov-error);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-logout:hover {
+  background: #FADBD8;
+}
+
+/* Role Selection Grid (Desktop: 3 side by side, Mobile: stacked) */
+.role-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 850px) {
+  .role-selection-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.role-select-card {
+  background: var(--gov-white);
+  border: 1.5px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 1.75rem;
+  text-align: center;
+  box-shadow: var(--box-shadow-subtle);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+}
+
+.role-select-card:hover {
+  border-color: var(--gov-green-primary);
+  transform: translateY(-2px);
+}
+
+.role-card-badge {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--gov-green-dark);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.role-card-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gov-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.role-card-desc {
+  font-size: 0.875rem;
+  color: var(--gov-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+}
+
+/* Password Input with Show/Hide Toggle */
+.password-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-group input {
+  padding-right: 4.5rem;
+}
+
+.btn-toggle-password {
+  position: absolute;
+  right: 6px;
+  background: var(--gov-offwhite);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gov-text-secondary);
+  cursor: pointer;
+}
+
+.btn-toggle-password:hover {
+  background: var(--gov-green-light);
+  color: var(--gov-green-dark);
+}
+
+/* Modals */
+.gov-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(17, 24, 39, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 1rem;
+}
+
+.gov-modal-backdrop.open {
+  display: flex;
+}
+
+.gov-modal-content {
+  background: var(--gov-white);
+  border: 2px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gov-modal-header {
+  padding: 1rem 1.5rem;
+  background: var(--gov-green-light);
+  border-bottom: 2px solid var(--gov-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gov-modal-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gov-green-dark);
+}
+
+.gov-modal-body {
+  padding: 1.5rem;
+}
+
+.gov-modal-footer {
+  padding: 1rem 1.5rem;
+  background: var(--gov-offwhite);
+  border-top: 1px solid var(--gov-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. Main Navigation Bar
+   -------------------------------------------------------------------------- */
+.gov-main-nav {
+  background-color: var(--gov-white);
+  border-bottom: 2px solid var(--gov-border);
+  box-shadow: var(--box-shadow-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.gov-nav-list {
+  display: flex;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.gov-nav-item {
+  flex-shrink: 0;
+}
+
+.gov-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.15rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--gov-text-primary);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.15s ease;
+  background-color: transparent;
+}
+
+.gov-nav-link:hover {
+  background-color: var(--gov-offwhite);
+  color: var(--gov-green-dark);
+}
+
+.gov-nav-link.active {
+  color: var(--gov-green-dark);
+  background-color: var(--gov-white);
+  border-bottom: 3px solid var(--gov-green-primary);
+}
+
+.gov-nav-link svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   4. Offline & Status Banners
+   -------------------------------------------------------------------------- */
+.gov-status-banner {
+  padding: 0.75rem 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--gov-border);
+  transition: all 0.3s ease;
+}
+
+.gov-status-banner.offline-active {
+  background-color: #FFF8E6;
+  border-color: #F0D080;
+  color: #7A5300;
+}
+
+.gov-status-banner.sync-active {
+  background-color: #E8F4FD;
+  border-color: #BBE1FA;
+  color: #074770;
+}
+
+.gov-status-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gov-status-message {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.gov-status-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.gov-btn-sync {
+  background: var(--gov-white);
+  border: 1px solid currentColor;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   5. Buttons
+   -------------------------------------------------------------------------- */
+.gov-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+  border: 1px solid transparent;
+}
+
+.gov-btn-primary {
+  background-color: var(--gov-green-primary);
+  color: var(--gov-white);
+  border-color: var(--gov-green-primary);
+}
+
+.gov-btn-primary:hover {
+  background-color: var(--gov-green-dark);
+  border-color: var(--gov-green-dark);
+}
+
+.gov-btn-secondary {
+  background-color: var(--gov-white);
+  color: var(--gov-green-dark);
+  border-color: var(--gov-green-primary);
+}
+
+.gov-btn-secondary:hover {
+  background-color: var(--gov-green-light);
+  border-color: var(--gov-green-dark);
+}
+
+.gov-btn-lg {
+  padding: 0.85rem 1.75rem;
+  font-size: 1.0625rem;
+}
+
+.gov-btn-sm {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.gov-btn-danger {
+  background-color: var(--gov-white);
+  color: var(--gov-error);
+  border-color: var(--gov-error);
+}
+
+.gov-btn-danger:hover {
+  background-color: #FDEDEC;
+}
+
+/* --------------------------------------------------------------------------
+   6. Cards & Panels
+   -------------------------------------------------------------------------- */
+.gov-card {
+  background-color: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--box-shadow-subtle);
+  overflow: hidden;
+}
+
+.gov-card-header {
+  padding: 1rem 1.25rem;
+  background-color: var(--gov-white);
+  border-bottom: 2px solid var(--gov-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.gov-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--gov-green-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gov-card-body {
+  padding: 1.25rem;
+}
+
+.gov-card-footer {
+  padding: 0.85rem 1.25rem;
+  background-color: var(--gov-offwhite);
+  border-top: 1px solid var(--gov-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Government Green Accent Panels */
+.gov-panel-green {
+  background-color: var(--gov-green-light);
+  border: 1px solid #BCE2BC;
+  border-left: 4px solid var(--gov-green-primary);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.gov-panel-grey {
+  background-color: var(--gov-offwhite);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Tables (Government Clear Tables)
+   -------------------------------------------------------------------------- */
+.gov-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  background: var(--gov-white);
+}
+
+.gov-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9375rem;
+}
+
+.gov-table th {
+  background-color: var(--gov-green-light);
+  color: var(--gov-green-dark);
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--gov-border);
+  white-space: nowrap;
+}
+
+.gov-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--gov-border);
+  color: var(--gov-text-primary);
+  vertical-align: middle;
+}
+
+.gov-table tr:last-child td {
+  border-bottom: none;
+}
+
+.gov-table tr:hover td {
+  background-color: #F8FAF8;
+}
+
+/* Table Badges & Status */
+.gov-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.gov-badge-success {
+  background-color: var(--gov-green-light);
+  color: var(--gov-green-dark);
+  border: 1px solid #B8E4B8;
+}
+
+.gov-badge-warning {
+  background-color: #FFF4D9;
+  color: #8C6200;
+  border: 1px solid #FFE08A;
+}
+
+.gov-badge-neutral {
+  background-color: #EDF2F0;
+  color: var(--gov-text-secondary);
+  border: 1px solid var(--gov-border);
+}
+
+.gov-badge-primary {
+  background-color: #E2ECE5;
+  color: var(--gov-green-dark);
+  border: 1px solid var(--gov-green-primary);
+}
+
+/* Progress bar inside tables and cards */
+.gov-progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #E2E8E5;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.gov-progress-fill {
+  height: 100%;
+  background-color: var(--gov-green-primary);
+  border-radius: var(--radius-sm);
+  transition: width 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   8. Form Controls
+   -------------------------------------------------------------------------- */
+.gov-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.gov-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--gov-text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.gov-input, .gov-select, .gov-textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  color: var(--gov-text-primary);
+  background-color: var(--gov-white);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gov-input:focus, .gov-select:focus, .gov-textarea:focus {
+  border-color: var(--gov-green-dark);
+  outline: 2px solid var(--gov-green-primary);
+}
+
+.gov-form-hint {
+  font-size: 0.8125rem;
+  color: var(--gov-text-secondary);
+  margin-top: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. Information Strip (4 Pillars)
+   -------------------------------------------------------------------------- */
+.gov-info-strip {
+  background-color: var(--gov-green-dark);
+  color: var(--gov-white);
+  padding: 2.25rem 0;
+  border-top: 2px solid var(--gov-green-primary);
+  border-bottom: 2px solid #05451e;
+}
+
+.gov-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.75rem;
+}
+
+.gov-info-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.gov-info-icon-box {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gov-info-icon-box svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--gov-white);
+}
+
+.gov-info-title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  color: #B8F2B8;
+}
+
+.gov-info-desc {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #E2ECE5;
+}
+
+/* --------------------------------------------------------------------------
+   10. Government Official Footer
+   -------------------------------------------------------------------------- */
+.gov-footer {
+  background-color: #1A2421;
+  color: #D6DFDB;
+  margin-top: auto;
+  border-top: 4px solid var(--gov-green-primary);
+  font-size: 0.875rem;
+}
+
+.gov-footer-main {
+  padding: 3rem 0 2rem;
+}
+
+.gov-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .gov-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 580px) {
+  .gov-footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gov-footer-brand-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--gov-white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.gov-footer-tagline {
+  color: #A2B5AC;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.gov-footer-heading {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--gov-white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--gov-green-primary);
+  padding-left: 0.5rem;
+}
+
+.gov-footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gov-footer-links a {
+  color: #CAD5CF;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.gov-footer-links a:hover {
+  color: var(--gov-white);
+  text-decoration: underline;
+}
+
+.gov-footer-bottom {
+  background-color: #111816;
+  padding: 1.25rem 0;
+  border-top: 1px solid #2B3833;
+  color: #8C9F96;
+  font-size: 0.8125rem;
+}
+
+.gov-footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gov-disclaimer {
+  color: #7B8F86;
+  font-style: italic;
+}
